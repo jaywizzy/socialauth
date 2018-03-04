@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+	<div class="col-md-12">
+		
+		<div class="col-md-offset-4"> 
+
+			<h2>Login</h2>
+			<form method="post">{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit"> Login </button>
+			</form>	
+			<br>
+			<p> <strong>-- OR --</strong></p>
+			<a href="{% url 'social:begin' 'github' %}"><i class ="fa fa-github"></i> Login with github </a><br>
+			<a href="{% url 'social:begin' 'facebook' %}"> <i class="fa fa-facebook"></i> Login with Facebook</a><br>
+			<a href="{% url 'social:begin' 'twitter' %}"><i class="fa fa-twitter"></i> Login with twitter</a><br>
+			<a href="{% url 'social:begin' 'instagram' %}"> <i class="fa fa-instagram"></i>Login with instagram</a>
+
+			<br>
+		</div>
+	</div>
+</body>
+</html>
+	
+
